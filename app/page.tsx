@@ -13,8 +13,6 @@ import avatar from 'app/avatar.jpg';
 import ViewCounter from 'app/blog/view-counter';
 import { PreloadResources } from 'app/preload';
 import {
-  getLeeYouTubeSubs,
-  getVercelYouTubeSubs,
   getViewsCount,
 } from 'app/db/queries';
 
@@ -90,11 +88,6 @@ function ChannelLink({ img, link, name }) {
 async function Subs({ name }: { name: string }) {
   noStore();
   let subscribers;
-  if (name === '@leerob') {
-    subscribers = await getLeeYouTubeSubs();
-  } else {
-    subscribers = await getVercelYouTubeSubs();
-  }
 
   return (
     <p className="text-neutral-600 dark:text-neutral-400">
@@ -136,7 +129,7 @@ export default function Page() {
     <section>
       <PreloadResources />
       <h1 className="mb-8 text-2xl font-medium tracking-tighter">
-        hey, I'm leerob 👋
+        hey, I'm clay-curry 👋
       </h1>
       <p className="prose prose-neutral dark:prose-invert">
         {`I'm a frontend developer, optimist, and community builder. I currently `}
@@ -255,8 +248,8 @@ export default function Page() {
       <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
         <ChannelLink
           img={avatar}
-          name="@leerob"
-          link="https://www.youtube.com/@leerob"
+          name="@clay-curry"
+          link="https://www.youtube.com/@clay-curry"
         />
         <ChannelLink
           img={vercel}
@@ -350,7 +343,7 @@ export default function Page() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://twitter.com/leeerob"
+            href="https://twitter.com/claycurry_"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">follow me</p>
@@ -361,7 +354,7 @@ export default function Page() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://leerob.substack.com"
+            href="https://clay-curry.substack.com"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">get email updates</p>
